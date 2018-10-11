@@ -2,28 +2,23 @@
 using System.Collections;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Animation))]
 public class Transparency : MonoBehaviour {
+    Color col;
 
-    public Animation anim;
+    float t = 0; 
+    public float duration= 1f;
     void Start()
     {
-        anim = GetComponent<Animation>();
-        AnimationCurve curve = AnimationCurve.Linear(0.0f, 0.0f, 2.0f, 1.0f);
-        AnimationClip clip = new AnimationClip();
-        clip.legacy = true;
-        clip.SetCurve("", typeof(GameObject), "renderer.material.color.a", curve);
-        anim.AddClip(clip, "test");
-        anim.Play("test");
-
-        Color col = GetComponent<Image>().color;
-        col.a = 1;
-        GetComponent<Image>().color = col;
+     
+        col= GetComponent<Image>().color;
+       
 
 
     }
     void Update()
     {
-
+        t += Time.deltaTime / duration;
+        col.a = Mathf.Lerp(0, 1, t);
+        GetComponent<Image>().color = col;
     }
-    }
+  }
