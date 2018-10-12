@@ -187,7 +187,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120319508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1959351680}
+        m_MethodName: Expand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 740476488}
+        m_MethodName: PlaceVertical
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &120319508
@@ -327,10 +349,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 740476483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94686e5882c99ab448402cbff7fa6b83, type: 3}
+  m_Script: {fileID: 11500000, guid: 353e400372e00964fb8d9dc8e617933e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NoButton: 6
+  ButDis: 50
   button: {fileID: 1760880525306930, guid: fd8a89f5d6394734fad8c55c8de17073, type: 2}
   MainButton: {fileID: 120319505}
 --- !u!1 &1626632660
@@ -494,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1959351676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -571,4 +594,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7b17ad0a6752245970c1feab6a7235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoButton: 6
   anim: {fileID: 0}

@@ -9,23 +9,23 @@ public class ButtonPlace : MonoBehaviour {
     public GameObject button;
     public GameObject MainButton;
     // Use this for initialization
-    void Start () {
+    public void EnableButtons()
+    {
 
-        float radius = 100f;
-        float Buoffset = 90 / NoButton; 
-        
+        float radius = 25f * NoButton;
+        float Buoffset = 90 / NoButton;
 
         for (int i = 0; i < NoButton; i++)
         {
-            float angleRadians = i* Buoffset* Mathf.Deg2Rad + 90 * Mathf.Deg2Rad + (Buoffset/2)*Mathf.Deg2Rad;
+            float angleRadians = i * Buoffset * Mathf.Deg2Rad + 90 * Mathf.Deg2Rad + (Buoffset / 2) * Mathf.Deg2Rad;
 
             // get the 2D dimensional coordinates
             float x = radius * Mathf.Cos(angleRadians);
             float y = radius * Mathf.Sin(angleRadians);
-            
-            Vector3 newPos = new Vector2(x,y);
-            Debug.Log("x : " + x + " y : "+y);
-            GameObject go= Instantiate(button, newPos, Quaternion.identity);
+
+            Vector3 newPos = new Vector2(x, y);
+           // Debug.Log("x : " + x + " y : " + y);
+            GameObject go = Instantiate(button, newPos, Quaternion.identity);
             go.transform.parent = MainButton.transform;
             go.transform.localPosition = newPos;
 
@@ -33,9 +33,4 @@ public class ButtonPlace : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
