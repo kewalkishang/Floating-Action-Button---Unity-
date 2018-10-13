@@ -11,9 +11,10 @@ public class FloatingActionButton : MonoBehaviour {
     public FabANIM FABType;
     public Button MainButton;
     public GameObject ButtonPrefab;
+    public Sprite Back;
+    public Sprite Menu;
 
-  
-  [System.Serializable]
+    [System.Serializable]
     public class ButtonInfo
     {
         public Sprite sprite;
@@ -45,6 +46,7 @@ public class FloatingActionButton : MonoBehaviour {
         {
             InitializeVertical();
             MainButton.onClick.AddListener(VerticallyUp);
+
         }
         else
         {
@@ -62,10 +64,13 @@ public class FloatingActionButton : MonoBehaviour {
                 child.gameObject.SetActive(true);
             place = true;
             expand = false;
-            
+            MainButton.gameObject.GetComponent<Image>().sprite = Back;
+
+
         }
         else
         {
+            MainButton.gameObject.GetComponent<Image>().sprite = Menu;
             mov = NoButton - 1;
             foreach (Transform child in MainButton.transform)
             {
@@ -158,6 +163,7 @@ public class FloatingActionButton : MonoBehaviour {
         
         if (expand)
         {
+            MainButton.gameObject.GetComponent<Image>().sprite = Back;
             yield return new WaitForSeconds(0.5f);
             foreach (Transform child in MainButton.transform)
             {
@@ -170,6 +176,7 @@ public class FloatingActionButton : MonoBehaviour {
         }
         else
         {
+            MainButton.gameObject.GetComponent<Image>().sprite = Menu;
             yield return new WaitForSeconds(0f);
             foreach (Transform child in MainButton.transform)
             {
